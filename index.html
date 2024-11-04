@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de ventas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="formulario">
+   <div class="header">
+
+    <div class="IZQ">
+        <img src="incos_logo.png" class="logo">
+        <h2>INCOS LA PAZ</h2>
+        <h3>Instituo Comercial de la Nacion Tte.Armando de Palacios</h3>
+        <div class="nro"><label>Nro.Factura <input type="number"></label></div>
+    </div>
+
+    <div class="DER">
+            <h2>Factura</h2>
+            <div class="fecha"><label>Fecha: <input type="date"></label></div>
+    </div>
+    
+   </div>
+<div class="datos">
+    <div><label>Cliente: <input type="text"></label></div>
+        <div><label>Telefono: <input type="tel"></label></div>
+        <div><label>Email: <input type="email"></label></div>
+        <div><label>Dirección: <input type="text"></label></div>
+    </div>
+
+<form>
+<table border="1">
+    <tr>
+        <th >CANTIDAD</th>
+        <th >DESCRIPTION</th>
+        <th >DETALLE</th>
+        <th >IMAGEN</th>
+        <th >P.UNITARIO</th>
+        <th >IMPORTE</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="N"></td>
+        <td>
+            <select class="opcion" onchange="foto(this); mostrar(this); detalles(this)" id="opcion">
+                <option value="#">Seleccionar</option>
+                <option value="90">Mouse</option>
+                <option value="170">Teclado</option>
+                <option value="200">Parlantes</option>
+                <option value="760">Camara Web</option>
+                <option value="2650">Impresora</option>
+            </select>
+        </td>
+        <td><h3 class="det"></h3></td>
+        <td class="resultado"><h2 class="res"></h2></td>
+        <td><H3 class="pre"></H3></td>
+        <td><h3 id="R"></h3></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="N"></td>
+        <td>
+            <select class="opcion" onchange="foto(this); mostrar(this); detalles(this)" id="opcion">
+                <option value="#">Seleccionar</option>
+                <option value="90">Mouse</option>
+                <option value="170">Teclado</option>
+                <option value="200">Parlantes</option>
+                <option value="760">Camara Web</option>
+                <option value="2650">Impresora</option>
+            </select>
+        </td>
+        <td><h3 class="det"></h3></td>
+        <td class="resultado"><h2 class="res"></h2></td>
+        <td><H3 class="pre"></H3></td>
+        <td><h3 id="R"></h3></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="N"></td>
+        <td>
+            <select class="opcion" onchange="foto(this); mostrar(this); detalles(this)" id="opcion">
+                <option value="#">Seleccionar</option>
+                <option value="90">Mouse</option>
+                <option value="170">Teclado</option>
+                <option value="200">Parlantes</option>
+                <option value="760">Camara Web</option>
+                <option value="2650">Impresora</option>
+            </select>
+        </td>
+        <td><h3 class="det"></h3></td>
+        <td class="resultado"><h2 class="res"></h2></td>
+        <td><H3 class="pre"></H3></td>
+        <td><h3 id="R"></h3></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="N"></td>
+        <td>
+            <select class="opcion" onchange="foto(this); mostrar(this); detalles(this)" id="opcion">
+                <option value="#">Seleccionar</option>
+                <option value="90">Mouse</option>
+                <option value="170">Teclado</option>
+                <option value="200">Parlantes</option>
+                <option value="760">Camara Web</option>
+                <option value="2650">Impresora</option>
+            </select>
+        </td>
+        <td><h3 class="det"></h3></td>
+        <td class="resultado"><h2 class="res"></h2></td>
+        <td><H3 class="pre"></H3></td>
+        <td><h3 id="R"></h3></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="N"></td>
+        <td>
+            <select class="opcion" onchange="foto(this); mostrar(this); detalles(this)" id="opcion">
+                <option value="#">Seleccionar</option>
+                <option value="90">Mouse</option>
+                <option value="170">Teclado</option>
+                <option value="200">Parlantes</option>
+                <option value="760">Camara Web</option>
+                <option value="2650">Impresora</option>
+            </select>
+        </td>
+        <td><h3 class="det"></h3></td>
+        <td class="resultado"><h2 class="res"></h2></td>
+        <td><H3 class="pre"></H3></td>
+        <td><h3 id="R"></h3></td>
+    </tr>
+    
+<p></p>
+</table>
+<div class="total">
+    <div>IVA (13%): $<span id="iva">0.00</span></div>
+    <div>Total: $<span id="total">0.00</span></div>
+</div>
+</form>
+</div>
+</body>
+</html>
+<script>
+    function foto(selectElement) {
+        var fila = selectElement.closest('tr'); 
+        var resDiv = fila.querySelector('.res'); 
+        var indice = selectElement.selectedIndex; 
+        switch (indice) {
+            case 1:
+                resDiv.innerHTML = '<img src="mouse.png">';
+                break;
+            case 2: 
+                resDiv.innerHTML = '<img src="keyboard.png">';
+                break;
+            case 3: 
+                resDiv.innerHTML = '<img src="speakers.png">';
+                break;
+            case 4: 
+                resDiv.innerHTML = '<img src="webcam.png">';
+                break;
+            case 5: 
+                resDiv.innerHTML = '<img src="printer.png">';
+                break;
+            default: 
+                resDiv.innerHTML = ''; 
+                break;
+        }       
+    }
+    function detalles(selectElement) {
+        var fila = selectElement.closest('tr'); 
+        var resDiv = fila.querySelector('.det'); 
+        var indice = selectElement.selectedIndex; 
+        switch (indice) {
+            case 1:
+                resDiv.innerHTML = '<p><strong>Mouse Logitech g203</strong></p><p> - Iluminación RGB LIGHTSYNC</p><p> - 6 botones programables</p><p> - Resolución: 200 – 8.000 dpi</p><p><strong>Respuesta</strong></p> <p> - Velocidad de respuesta USB: 1000 Hz (1 ms)</p> <p> - Microprocesador: ARM de 32 bits</p>';
+                break;
+            case 2: 
+                resDiv.innerHTML = '<p><strong>ASUS ROG Claymore II</strong></p><p> - Aura Sync RGB Wireless</p><p> - Batería de 4000 mAh</p><p> - Respuesta de 1 ms y una vida útil de 100 millones de pulsaciones</p><p> - Inalambrico de 2.4 Ghz</p>';
+                break;
+            case 3: 
+                resDiv.innerHTML = '<p><strong>Genius sp-u115 Red</strong></p><p> - Conector audio: 3.5 mm</p><p> - Potencia (rms): 1.5 watts</p><p> - Frecuencia: 200 hz - 18 khz</p>';
+                break;
+            case 4: 
+                resDiv.innerHTML = '<p><strong>Logitech C930e Webcam</strong></p><p> - 1080p/30fps (hasta 1920 x 1080 píxeles)</p><p> - Micrófono integrado</p><p> - Cámara mega pixel: 3</p><p> - Zoom digital: 4x</p>';
+                break;
+            case 5: 
+                resDiv.innerHTML = '<p><strong>Epson EcoTank L380</strong></p><p> - Hasta 5760 x 1440 dpi de resolución</p><p> - Tecnología de inyección de tinta MicroPiezo® de 4 colores (CMYK)</p><p><strong>Tipo de Tinta</strong></p><p> - Botellas de Tinta EcoTank</p><p><strong>Velocidad de impresion</strong></p><p> - Máxima: Negro 33pm y Color 15ppm</p>';
+                break;
+            default: 
+                resDiv.innerHTML = ''; 
+                break;
+        }       
+    }
+    function mostrar(selectElement) {
+    var fila = selectElement.closest('tr'); 
+    var valor = selectElement.value; 
+    var R = fila.querySelector('.pre'); 
+    R.innerHTML = valor; 
+    var cantidad = parseFloat(fila.querySelector('#N').value); 
+    var importe = cantidad * valor;
+    fila.querySelector('#R').innerHTML = importe.toFixed(2);
+    var total = 0;
+    var rows = document.querySelectorAll('table tr'); // Select all rows in the table
+    rows.forEach(function(row, index) {
+        if (index > 0) { // Skip the header row
+            var rowImporte = parseFloat(row.querySelector('h3#R').innerHTML) || 0; // Get the importe for the row
+            total += rowImporte; // Sum the imports
+        }
+    });
+
+    var iva = total * 0.13; // Calculate 13% IVA
+    var totalWithIva = total + iva; // Calculate total with IVA
+
+    // Update IVA and total fields
+    document.getElementById('iva').innerHTML = iva.toFixed(2);
+    document.getElementById('total').innerHTML = totalWithIva.toFixed(2);
+}
+
+</script>
